@@ -13,8 +13,8 @@ cd dist
 # echo 'www.example.com' > CNAME
 
 # set the identity
-git config user.email "samestimable2016@gmail.com"
-git config user.name "Sam Huang"
+git config --global user.email "samestimable2016@gmail.com"
+git config --global user.name "Sam Huang"
 
 git init
 git add -A

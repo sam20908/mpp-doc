@@ -1,5 +1,4 @@
 {
-  "homepage": "http://sam20908.github.io/mpp-doc",
   "name": "mpp-doc",
   "version": "0.1.0",
   "private": true,
@@ -7,8 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:e2e": "vue-cli-service test:e2e",
-    "lint": "vue-cli-service lint",
-    "deploy": "sudo ./deploy.sh"
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "autoprefixer": "^9",

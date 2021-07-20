@@ -8,7 +8,7 @@
     "build": "vue-cli-service build",
     "test:e2e": "vue-cli-service test:e2e",
     "lint": "vue-cli-service lint",
-    "deploy": "./deploy.sh"
+    "deploy": "sudo ./deploy.sh"
   },
   "dependencies": {
     "autoprefixer": "^9",

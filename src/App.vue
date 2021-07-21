@@ -1,6 +1,8 @@
 <template>
   <div id="nav" class="bg-black">
-    <div class="container p-3 mx-auto flex items-center justify-between text-white">
+    <div
+      class="container p-3 mx-auto flex items-center justify-between text-white"
+    >
       <div class="inline-flex">
         <img src="@/assets/logo-nav-brand.png" alt="" class="mr-4 w-8" />
         <span class="text-xl font-bold">mpp</span>
@@ -22,12 +24,12 @@ export default class App extends Vue {}
 
 <style scoped lang="stylus">
 .nav-item {
-  @apply px-4;
+  @apply: px-4;
 }
 
 .nav-item-active {
-  @apply bg-white;
-  @apply text-black;
-  @apply underline;
+  @apply: bg-white;
+  @apply: text-black;
+  @apply: underline;
 }
 </style>

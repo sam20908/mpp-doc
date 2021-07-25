@@ -9,7 +9,7 @@
       </div>
       <div class="flex space-x-3 font-semibold text-lg">
         <router-link to="/" class="nav-item">Home</router-link>
-        <router-link to="/about" class="nav-item">About</router-link>
+        <!-- <router-link to="/about" class="nav-item">About</router-link> -->
       </div>
     </div>
   </div>

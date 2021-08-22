@@ -39,7 +39,7 @@
                 <p class="text-xl text-justify font-light">
                   mpp was designed with simplicity in mind. The way you use mpp
                   is very straightforward and the API was designed to be easy to
-                  understand.
+                  understand. Let mpp do the dirty work for you.
                 </p>
               </div>
             </td>
@@ -53,7 +53,7 @@
                 <p class="text-6xl font-extrabold mb-10">LOTS OF MATH</p>
                 <p class="text-xl text-justify font-light">
                   mpp supports various matrix operations like <b>transpose</b>,
-                  <b>determinant</b>, <b>inverse</b>, and more. It also utilize
+                  <b>determinant</b>, <b>inverse</b>, and more. It also utilizes
                   expression template to allow efficient computation of matrix
                   arithmetic operations.
                 </p>
@@ -71,7 +71,7 @@
                   mpp implements all of its operations as a <b>CPO</b> (<i
                     >custoimzation point object</i
                   >), which means you can provide your own type and overload of
-                  the algorithm to make it function as you please.
+                  the algorithm to make it work for your own type.
                 </p>
               </div>
             </td>

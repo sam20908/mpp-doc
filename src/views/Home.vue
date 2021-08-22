@@ -1,154 +1,117 @@
 <template>
   <div id="home">
-    <div class="bg-gray-500">
-      <div class="container mx-auto p-10">
-        <div class="grid grid-cols-2 text-white">
-          <div class="inline-flex items-center justify-between">
-            <img src="@/assets/logo128.png" alt="" class="mr-10" />
-            <div class="mx-auto">
-              <h1 class="text-4xl font-extrabold mb-5">mpp</h1>
-              <p class="text-lg">
-                Built with friendliness. Avoids long verbose names. Written with
-                performance in mind. Utilizes modern C++.
-                <i>Your next C++ matrix library.</i>
-              </p>
-            </div>
-          </div>
-          <div class="mx-auto">
-            <h1 class="text-4xl font-extrabold mb-5">Some neat features:</h1>
-            <ul class="list-disc text-lg">
-              <li>Lazy evaluation</li>
-              <li>Broad customization</li>
-              <li>Nice syntax sugar</li>
-            </ul>
-          </div>
-        </div>
+    <div
+      class="
+        text-white
+        roboto-text
+        flex
+        jumbotron-bg
+        py-20
+        items-center
+        justify-center
+      "
+    >
+      <img src="@/assets/logo256.png" alt="" class="jumbotron-logo mr-20" />
+      <div class="w-1/3">
+        <p class="text-7xl font-bold pb-10">mpp</p>
+        <p class="text-3xl font-extralight">
+          Want to use matrices within your C++ application? Look no further with
+          mpp.
+        </p>
       </div>
     </div>
-    <div class="bg-gray-400">
-      <div class="container mx-auto p-10 text-white">
-        <h1 class="code-header">How to get started?</h1>
-        <highlightjs lang="cmake" :code="getStartedCMakeCode" class="code" />
-        <highlightjs lang="cpp" :code="getStartedCppCode" class="code" />
-      </div>
+    <div style="background-color: #1e1e1e">
+      <table class="table-fixed mx-auto container">
+        <thead>
+          <tr>
+            <th class="w-1/2"></th>
+            <th class="w-1/2"></th>
+          </tr>
+        </thead>
+        <tbody class="roboto-text items-center">
+          <tr>
+            <td class="p-10">
+              <img src="@/assets/demo-initialization.png" alt="" />
+            </td>
+            <td class="p-10">
+              <div class="text-center text-white">
+                <p class="text-6xl font-extrabold mb-10">SIMPLE TO USE</p>
+                <p class="text-xl text-justify font-light">
+                  mpp was designed with simplicity in mind. The way you use mpp
+                  is very straightforward and the API was designed to be easy to
+                  understand.
+                </p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="p-10">
+              <img src="@/assets/demo-math.png" alt="" />
+            </td>
+            <td class="p-10">
+              <div class="text-center text-white">
+                <p class="text-6xl font-extrabold mb-10">LOTS OF MATH</p>
+                <p class="text-xl text-justify font-light">
+                  mpp supports various matrix operations like <b>transpose</b>,
+                  <b>determinant</b>, <b>inverse</b>, and more. It also utilize
+                  expression template to allow efficient computation of matrix
+                  arithmetic operations.
+                </p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="p-10">
+              <img src="@/assets/demo-customization-overload.png" alt="" />
+            </td>
+            <td class="p-10">
+              <div class="text-center text-white">
+                <p class="text-6xl font-extrabold mb-10">CHANGE OPERATIONS</p>
+                <p class="text-xl text-justify font-light">
+                  mpp implements all of its operations as a <b>CPO</b> (<i
+                    >custoimzation point object</i
+                  >), which means you can provide your own type and overload of
+                  the algorithm to make it function as you please.
+                </p>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <div class="bg-gray-600">
-      <div class="container mx-auto p-10 text-white">
-        <h1 class="code-header">Lazy evaluation?</h1>
-        <highlightjs lang="cpp" :code="lazyEvalCode" class="code" />
-        <h1 class="code-header">Broad customization?</h1>
-        <highlightjs lang="cpp" :code="broadCustomizeCfgCode" class="code" />
-        <highlightjs
-          lang="cpp"
-          :code="broadCustomizeTagInvokeCode"
-          class="code"
-        />
-        <h1 class="code-header">Nice syntax sugar?</h1>
-        <highlightjs lang="cpp" :code="syntaxSugarCode" class="code" />
-      </div>
+    <div
+      class="roboto-text mt-10 items-center text-center mx-auto container mb-10"
+    >
+      <p class="text-3xl font-bold mb-5">
+        Interested in mpp? Check out the links below
+      </p>
+      <button
+        class="
+          bg-gradient-to-r
+          from-pink-700
+          via-red-500
+          to-yellow-500
+          text-white
+          rounded-xl
+          py-2
+          px-10
+          text-3xl
+          font-bold
+        "
+        onclick="window.location.href='https://github.com/sam20908/mpp/';"
+      >
+        GitHub
+      </button>
     </div>
   </div>
 </template>
 
-<script lang="ts">
-import { Options, Vue } from "vue-class-component";
-import hljsVuePlugin from "@highlightjs/vue-plugin";
-
-@Options({
-  components: {
-    highlightjs: hljsVuePlugin.component,
-  },
-})
-export default class Home extends Vue {
-  getStartedCMakeCode = `add_subdirectory("mpp")
-
-target_link_libraries(your_target mpp::mpp)
-`;
-
-  getStartedCppCode = `#include <mpp/mpp.hpp>
-`;
-
-  lazyEvalCode = `mpp::mat a({1, 2, 3}, {4, 5, 6}});
-mpp::mat b({{1, 2, 3}, {4, 5, 6}});
-
-auto expr = a + b; // Not evaluated
-
-expr(0, 0); // Evaluates result at (1, 1) only
-mpp::mat(expr); // Evaluated fully
-`;
-
-  broadCustomizeCfgCode = `#include <mpp/utility/cfg.hpp>
-
-namespace mpp
-{
-  template<>
-  struct cfg<override>
-  {
-    template<typename Val>
-    using alloc = my_custom_allocator<Val>;
-
-    static constexpr std::size_t rows_extent = 10;
-    static constexpr std::size_t cols_extent = 10;
-
-    template<typename Val, std::size_t Rows, std::size_t Cols, typename>
-    using fixed_buf = std::array<Val, 1>;
-
-    template<typename Val, std::size_t, std::size_t, typename Alloc>
-    using dyn_buf = std::array<Val, 2>;
-
-    template<typename Val, std::size_t, std::size_t Cols, typename Alloc>
-    using dyn_rows_buf = std::array<Val, 3>;
-
-    template<typename Val, std::size_t Rows, std::size_t, typename Alloc>
-    using dyn_cols_buf = std::array<Val, 4>;
-  };
-}
-
-#include <mpp/mpp.hpp>
-
-mpp::mat<int> m;
-m.rows_extent(); // 10
-m.cols_extent(); // 10
-
-using buf_t = typename mat<int, mpp::dyn, mpp::dyn>::buffer_type;
-// ^ std::array<int, 2>
-
-using alloc = typename mat<int, mpp::dyn, mpp::dyn>::allocator_type;
-// ^ my_custom_allocator<int>
-`;
-
-  broadCustomizeTagInvokeCode = `namespace ns
-{
-  struct dumb_matrix {};
-
-  [[nodiscard]] auto tag_invoke(mpp::det_t, dumb_matrix) -> int
-  {
-    return 2000;
-  }
-}
-
-ns::dumb_matrix dummy;
-mpp::det(dummy); // 2000
-`;
-
-  syntaxSugarCode = `mpp::mat<int> a({{1, 2, 3}, {4, 5, 6}});
-
-auto [l, u] = mpp::lu(a);
-`;
-}
-</script>
-
 <style lang="stylus" scoped>
-.code-header {
-  @apply: text-6xl;
-  @apply: font-extrabold;
-  @apply: text-center;
-  @apply: mb-16;
+.roboto-text {
+  font-family: 'Roboto', sans-serif;
 }
 
-.code {
-  @apply: w-3 / 4;
-  @apply: mx-auto;
-  @apply: mb-10;
+.jumbotron-bg {
+  background: url("../assets/banner.png");
 }
 </style>

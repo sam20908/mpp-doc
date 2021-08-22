@@ -66,7 +66,7 @@
             </td>
             <td class="p-10">
               <div class="text-center text-white">
-                <p class="text-6xl font-extrabold mb-10">CHANGE OPERATIONS</p>
+                <p class="text-6xl font-extrabold mb-10">CUSTOMIZABLE</p>
                 <p class="text-xl text-justify font-light">
                   mpp implements all of its operations as a <b>CPO</b> (<i
                     >custoimzation point object</i
